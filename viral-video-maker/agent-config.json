@@ -1,0 +1,165 @@
+{
+  "agents": [
+    {
+      "name": "video-processor",
+      "file": "agents/video-processor-agent.js",
+      "port": 3001,
+      "description": "Processamento e edição de vídeos",
+      "dependencies": [],
+      "healthCheck": {
+        "endpoint": "/health",
+        "expectedResponse": "OK"
+      },
+      "capabilities": [
+        "video-upload",
+        "video-process",
+        "video-convert",
+        "video-optimize"
+      ]
+    },
+    {
+      "name": "ai-optimizer",
+      "file": "agents/ai-optimizer-agent.js",
+      "port": 3002,
+      "description": "Otimização com IA para viralização",
+      "dependencies": [],
+      "healthCheck": {
+        "endpoint": "/health",
+        "expectedResponse": "OK"
+      },
+      "capabilities": [
+        "ai-analyze",
+        "ai-optimize",
+        "ai-suggest",
+        "ai-enhance"
+      ]
+    },
+    {
+      "name": "social-media",
+      "file": "agents/social-media-agent.js",
+      "port": 3003,
+      "description": "Integração com redes sociais",
+      "dependencies": [],
+      "healthCheck": {
+        "endpoint": "/health",
+        "expectedResponse": "OK"
+      },
+      "capabilities": [
+        "youtube-upload",
+        "tiktok-upload",
+        "instagram-upload",
+        "social-schedule"
+      ]
+    },
+    {
+      "name": "analytics",
+      "file": "agents/analytics-agent.js",
+      "port": 3004,
+      "description": "Análise de performance e métricas",
+      "dependencies": [],
+      "healthCheck": {
+        "endpoint": "/health",
+        "expectedResponse": "OK"
+      },
+      "capabilities": [
+        "analytics-collect",
+        "analytics-report",
+        "analytics-insights",
+        "analytics-predict"
+      ]
+    },
+    {
+      "name": "billing",
+      "file": "agents/billing-agent.js",
+      "port": 3005,
+      "description": "Gestão financeira e assinaturas",
+      "dependencies": [],
+      "healthCheck": {
+        "endpoint": "/health",
+        "expectedResponse": "OK"
+      },
+      "capabilities": [
+        "billing-process",
+        "billing-subscribe",
+        "billing-invoice",
+        "billing-report"
+      ]
+    },
+    {
+      "name": "user-management",
+      "file": "agents/user-management-agent.js",
+      "port": 3006,
+      "description": "Gerenciamento de usuários e equipes",
+      "dependencies": [],
+      "healthCheck": {
+        "endpoint": "/health",
+        "expectedResponse": "OK"
+      },
+      "capabilities": [
+        "user-auth",
+        "user-manage",
+        "team-manage",
+        "user-permissions"
+      ]
+    },
+    {
+      "name": "content-strategy",
+      "file": "agents/content-strategy-agent.js",
+      "port": 3007,
+      "description": "Estratégia de conteúdo e tendências",
+      "dependencies": [],
+      "healthCheck": {
+        "endpoint": "/health",
+        "expectedResponse": "OK"
+      },
+      "capabilities": [
+        "content-analyze",
+        "content-trends",
+        "content-suggest",
+        "content-calendar"
+      ]
+    },
+    {
+      "name": "quality-assurance",
+      "file": "agents/quality-assurance-agent.js",
+      "port": 3008,
+      "description": "Garantia de qualidade e validação",
+      "dependencies": [],
+      "healthCheck": {
+        "endpoint": "/health",
+        "expectedResponse": "OK"
+      },
+      "capabilities": [
+        "quality-check",
+        "quality-validate",
+        "quality-report",
+        "quality-improve"
+      ]
+    }
+  ],
+  "monitoring": {
+    "interval": 30000,
+    "healthCheckTimeout": 5000,
+    "maxRetries": 3,
+    "restartDelay": 5000,
+    "autoRestart": true
+  },
+  "queue": {
+    "maxConcurrentJobs": 5,
+    "jobTimeout": 300000,
+    "retryAttempts": 3,
+    "deadLetterQueue": true
+  },
+  "logging": {
+    "level": "info",
+    "file": "orchestrator.log",
+    "console": true,
+    "format": "json"
+  },
+  "notifications": {
+    "enabled": true,
+    "webhook": null,
+    "email": null,
+    "slack": null
+  }
+}
